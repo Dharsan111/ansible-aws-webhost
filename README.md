@@ -48,16 +48,20 @@ ansible-aws-webhost/
 ```bash
 git clone https://github.com/Dharsan111/ansible-aws-webhost.git
 cd ansible-aws-webhost
+
 ### 2. Create Virtual Environment & Install Dependencies
+```bash
 python3 -m venv ansible-env
 source ansible-env/bin/activate
 pip install ansible boto3 botocore amazon.aws
 
 ### 3. Configure AWS CLI
+```bash
 aws configure
 
 
 (Enter your AWS Access Key, Secret Key, region → e.g., ap-south-1)
 
 ### 4. Run the Playbook
+```bash
 ansible-playbook playbook.yml
