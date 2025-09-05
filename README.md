@@ -26,7 +26,7 @@ Designed for cloud learners and DevOps beginners who want hands-on experience wi
 ---
 
 ## Project Structure
-
+```bash
 ansible-aws-webhost/
 ├── ansible.cfg
 ├── playbook.yml
@@ -38,6 +38,7 @@ ansible-aws-webhost/
 │ └── website-deploy/
 │ ├── tasks/main.yml
 │ └── templates/index.html.j2
+```
 
 
 ---
@@ -48,5 +49,7 @@ ansible-aws-webhost/
 ```bash
 git clone https://github.com/Dharsan111/ansible-aws-webhost.git
 cd ansible-aws-webhost
+
+
 
 
