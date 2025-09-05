@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - ec2-provision
+
+
+- hosts: web
+  become: yes
+  roles:
+    - nginx-install
+    - website-deploy

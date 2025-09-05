@@ -1,0 +1,28 @@
+---
+- name: Launch EC2 Instance
+  amazon.aws.ec2_instance:
+    name: my-ansible-ec2
+    key_name: my-wsl-key
+    region: ap-south-1
+    instance_type: t3.micro
+    image_id: ami-0f5ee92e2d63afc18
+    wait: yes
+    network:
+      assign_public_ip: true
+    tags:
+      Project: Ansible-AWS
+  register: ec2
+
+
+- name: Wait For SSH
+  wait_for:
+    host: "{{ec2.instances[0].public_ip_address }}"
+    port: 22
+    timeout: 300
+
+
+- name: Add to in-memory group
+  add_host:
+    name: "{{ ec2.instances[0].public_ip_address }}"
+    groups: web
+    ansible_user: ubuntu

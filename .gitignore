@@ -1,0 +1,14 @@
+# Python / venv
+__pycache__/
+*.pyc
+.venv/
+env/
+ansible-env/
+
+# SSH keys
+*.pem
+*.pub
+
+# Ansible cache
+*.retry
+
